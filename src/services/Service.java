@@ -13,8 +13,8 @@ public class Service {
     }
     public void transferValueToLinkedHashSet(){  //O(n)
         LinkedHashSet<String> linkedHashSet = new LinkedHashSet<>();
-        for (int i = 0; i < linkedHashMap.size(); i++){
-            linkedHashSet.add(linkedHashMap.get(i));
+        for (String value: linkedHashMap.values()){
+            linkedHashSet.add(value);
         }
         System.out.println(linkedHashSet.stream().collect(Collectors.toList()));
     }
