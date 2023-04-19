@@ -7,11 +7,11 @@ import java.util.stream.Collectors;
 
 public class Service {
     private LinkedHashMap<Integer, String> linkedHashMap = new LinkedHashMap();
-    public void addToLinkedHashMap(Integer index, String value){
+    public void addToLinkedHashMap(Integer index, String value){  //O(1)
         linkedHashMap.put(index, value);
         System.out.println("Add new value to list \"" + value + "\" with key code <" + index + ">");
     }
-    public void transferValueToLinkedHashSet(){
+    public void transferValueToLinkedHashSet(){  //O(n)
         LinkedHashSet<String> linkedHashSet = new LinkedHashSet<>();
         for (int i = 0; i < linkedHashMap.size(); i++){
             linkedHashSet.add(linkedHashMap.get(i));
@@ -19,7 +19,7 @@ public class Service {
         System.out.println(linkedHashSet.stream().collect(Collectors.toList()));
     }
 
-    public void transferKeysToLinkedList(){
+    public void transferKeysToLinkedList(){  //O(n)
         LinkedList<Integer> list = new LinkedList<>();
         for (Integer element:linkedHashMap.keySet()) {
             list.add(element);
